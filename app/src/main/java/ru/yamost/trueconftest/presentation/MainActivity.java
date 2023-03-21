@@ -44,10 +44,8 @@ public class MainActivity extends AppCompatActivity {
             v.performClick();
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 changeTextColorWithLocale(textView);
-                if (textViewAnimation == null) {
-                    textViewAnimation = new TextViewAnimation(textView, screen.getBottom());
-                }
-                textViewAnimation.reloadAnimationFromPosition(event.getX(), event.getY());
+                textViewAnimation.setBottomParentBorder(screen.getBottom())
+                    .restartAnimationFromPosition(event.getX(), event.getY());
             }
             return true;
         }
@@ -65,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         textViewAnimation.killAnimationThread();
+        textViewAnimation = null;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        textViewAnimation = new TextViewAnimation(textView);
     }
 }

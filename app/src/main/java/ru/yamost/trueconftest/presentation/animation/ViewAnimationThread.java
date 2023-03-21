@@ -59,7 +59,7 @@ class ViewAnimationThread extends Thread implements AnimationView {
     }
 
     @Override
-    public void reloadAnimationFromPosition(float positionX, float positionY) {
+    public void restartAnimationFromPosition(float positionX, float positionY) {
         view.setX(positionX);
         view.setY(positionY);
         currentPositionY = positionY;

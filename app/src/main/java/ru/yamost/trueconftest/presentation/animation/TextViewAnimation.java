@@ -43,7 +43,12 @@ public class TextViewAnimation implements AnimationView {
     }
 
     @Override
-    public void reloadAnimationFromPosition(float positionX, float positionY) {
-        viewAnimationThread.reloadAnimationFromPosition(positionX, positionY);
+    public void restartAnimationFromPosition(float positionX, float positionY) {
+        viewAnimationThread.restartAnimationFromPosition(positionX, positionY);
+    }
+
+    @Override
+    public AnimationView setBottomParentBorder(float y) {
+        return viewAnimationThread.setBottomParentBorder(y);
     }
 }

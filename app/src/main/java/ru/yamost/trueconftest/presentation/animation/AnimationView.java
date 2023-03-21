@@ -6,5 +6,6 @@ public interface AnimationView {
     void killAnimationThread();
     void reverseAnimation();
     AnimationView setAnimationSpeed(float speed);
-    void reloadAnimationFromPosition(float positionX, float positionY);
+    void restartAnimationFromPosition(float positionX, float positionY);
+    AnimationView setBottomParentBorder(float y);
 }
