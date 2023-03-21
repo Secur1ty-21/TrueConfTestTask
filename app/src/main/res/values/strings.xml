@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">TrueConf Test</string>
+    <string name="app_name" translatable="false">TrueConf Test</string>
+    <string name="anim_text">Hello</string>
 </resources>
